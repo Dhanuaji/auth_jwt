@@ -1,5 +1,6 @@
 package com.example.auth_jwt.security.securityConfig;
 
+import com.example.auth_jwt.BaseApiConstants.BaseApiConstants;
 import com.example.auth_jwt.security.jwtFilter.JwtAuthFilter;
 import com.example.auth_jwt.security.services.UsersAccountsDetailsServiceImpl;
 import com.example.auth_jwt.usersAccount.servicesInterfaces.IUsersAccountsService;
@@ -65,7 +66,14 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/addNewUser", "/auth/welcome", "/auth/generateToken").permitAll()
+                        .requestMatchers(BaseApiConstants.contextAuth+"/addNewUser",
+                                BaseApiConstants.contextAuth+"/welcome",
+                                BaseApiConstants.contextAuth+"/generateToken")
+                        .permitAll()
+                        .requestMatchers(BaseApiConstants.contextAuth+BaseApiConstants.contextOwner+"/**")
+                        .hasAuthority("OWNER")
+                        .requestMatchers(BaseApiConstants.contextAuth+BaseApiConstants.contextAdmin+"/**")
+                        .hasAuthority("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(sess -> sess
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))

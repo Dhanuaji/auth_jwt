@@ -1,5 +1,6 @@
 package com.example.auth_jwt.security.controllers;
 
+import com.example.auth_jwt.BaseApiConstants.BaseApiConstants;
 import com.example.auth_jwt.security.dtos.AccountsRequestDto;
 import com.example.auth_jwt.security.services.JwtService;
 import com.example.auth_jwt.security.services.UsersAccountsDetailsServiceImpl;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/auth")
+@RequestMapping(BaseApiConstants.contextAuth)
 @Slf4j
 public class AuthController {
 
@@ -38,6 +39,16 @@ public class AuthController {
     @GetMapping("/needLogin")
     public String needLogin() {
         return "LOGIN SUCCESS";
+    }
+
+    @GetMapping("/owner/login")
+    public String needLoginOwner() {
+        return "LOGIN SUCCESS AS OWNER";
+    }
+
+    @GetMapping("/admin/login")
+    public String needLoginAdmin() {
+        return "LOGIN SUCCESS AS ADMIN";
     }
 
     @PostMapping("/addNewUser")

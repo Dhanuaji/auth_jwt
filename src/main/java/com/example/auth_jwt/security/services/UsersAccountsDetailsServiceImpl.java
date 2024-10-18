@@ -32,9 +32,7 @@ public class UsersAccountsDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         log.info("Trying to find account with email {}", email);
         Optional<UsersAccounts> account = accountsService.findByEmail(email);
-        return account.map(usersAccounts -> new UsersAccountsDetails(usersAccounts.getEmail(),
-                        usersAccounts.getPassword(),
-                        usersAccounts.isIsactive()))
+        return account.map(UsersAccountsDetails::new)
                 .orElseThrow(() -> new UsernameNotFoundException("Account with email "+email+"is not found"));
     }
 
