@@ -3,7 +3,7 @@ package com.example.auth_jwt.security.securityConfig;
 import com.example.auth_jwt.BaseApiConstants.BaseApiConstants;
 import com.example.auth_jwt.security.jwtFilter.JwtAuthFilter;
 import com.example.auth_jwt.security.services.UsersAccountsDetailsServiceImpl;
-import com.example.auth_jwt.usersAccount.servicesInterfaces.IUsersAccountsService;
+import com.example.auth_jwt.masters.usersAccount.servicesInterfaces.IUsersAccountsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

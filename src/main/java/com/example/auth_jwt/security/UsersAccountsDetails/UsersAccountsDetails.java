@@ -1,6 +1,6 @@
 package com.example.auth_jwt.security.UsersAccountsDetails;
 
-import com.example.auth_jwt.usersAccount.entities.UsersAccounts;
+import com.example.auth_jwt.masters.usersAccount.entities.UsersAccounts;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

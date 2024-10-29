@@ -1,5 +1,6 @@
-package com.example.auth_jwt.usersAccount.entities;
+package com.example.auth_jwt.masters.usersAccount.entities;
 
+import com.example.auth_jwt.masters.usersDatas.entities.UserData;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,4 +36,7 @@ public class UsersAccounts {
 
     @Column(name = "isactive")
     private boolean isactive;
+
+    @OneToOne(mappedBy = "A01", cascade = CascadeType.REMOVE)
+    private UserData usersData;
 }

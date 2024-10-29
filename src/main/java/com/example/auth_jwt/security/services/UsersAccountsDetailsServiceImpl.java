@@ -2,8 +2,8 @@ package com.example.auth_jwt.security.services;
 
 import com.example.auth_jwt.security.UsersAccountsDetails.UsersAccountsDetails;
 import com.example.auth_jwt.security.dtos.AccountsRequestDto;
-import com.example.auth_jwt.usersAccount.entities.UsersAccounts;
-import com.example.auth_jwt.usersAccount.servicesInterfaces.IUsersAccountsService;
+import com.example.auth_jwt.masters.usersAccount.entities.UsersAccounts;
+import com.example.auth_jwt.masters.usersAccount.servicesInterfaces.IUsersAccountsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,7 +33,10 @@ public class UsersAccountsDetailsServiceImpl implements UserDetailsService {
         log.info("Trying to find account with email {}", email);
         Optional<UsersAccounts> account = accountsService.findByEmail(email);
         return account.map(UsersAccountsDetails::new)
-                .orElseThrow(() -> new UsernameNotFoundException("Account with email "+email+"is not found"));
+                .orElseThrow(
+                        () -> new UsernameNotFoundException(
+                                "Account with email "+email+"is not found"
+                         ));
     }
 
     public void addAccount(AccountsRequestDto dto) {

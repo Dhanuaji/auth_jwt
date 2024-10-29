@@ -1,6 +1,6 @@
-package com.example.auth_jwt.usersAccount.servicesInterfaces;
+package com.example.auth_jwt.masters.usersAccount.servicesInterfaces;
 
-import com.example.auth_jwt.usersAccount.entities.UsersAccounts;
+import com.example.auth_jwt.masters.usersAccount.entities.UsersAccounts;
 
 import java.util.Optional;
 

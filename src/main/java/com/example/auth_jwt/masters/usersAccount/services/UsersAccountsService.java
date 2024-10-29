@@ -1,8 +1,8 @@
-package com.example.auth_jwt.usersAccount.services;
+package com.example.auth_jwt.masters.usersAccount.services;
 
-import com.example.auth_jwt.usersAccount.entities.UsersAccounts;
-import com.example.auth_jwt.usersAccount.repositories.UsersAccountsRepository;
-import com.example.auth_jwt.usersAccount.servicesInterfaces.IUsersAccountsService;
+import com.example.auth_jwt.masters.usersAccount.entities.UsersAccounts;
+import com.example.auth_jwt.masters.usersAccount.repositories.UsersAccountsRepository;
+import com.example.auth_jwt.masters.usersAccount.servicesInterfaces.IUsersAccountsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
