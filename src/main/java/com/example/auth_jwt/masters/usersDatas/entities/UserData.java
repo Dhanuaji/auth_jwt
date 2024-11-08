@@ -35,6 +35,6 @@ public class UserData {
     private boolean isactive;
 
     @OneToOne
-    @JoinColumn(name = "email", nullable = false, referencedColumnName = "email")
+    @JoinColumn(name = "usersAccounts", nullable = false, referencedColumnName = "id")
     private UsersAccounts usersAccounts;
 }

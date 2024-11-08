@@ -37,6 +37,6 @@ public class UsersAccounts {
     @Column(name = "isactive")
     private boolean isactive;
 
-    @OneToOne(mappedBy = "A01", cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "usersAccounts", cascade = CascadeType.REMOVE)
     private UserData usersData;
 }
